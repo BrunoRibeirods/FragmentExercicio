@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    tools:context=".ui.GastosFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="@string/btn_cadastrar"
+        android:textColor="@color/colordetail"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed1"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_marginBottom="14dp"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/edt_descricao" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed2"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_marginBottom="14dp"
+            android:padding="16dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/edt_categoria" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed3"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_marginBottom="14dp"
+            android:padding="16dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/edt_dataHora" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed4"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_marginBottom="3dp"
+            android:padding="16dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/edt_valor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:textColor="@color/colorWhite"
+        android:text="@string/btn_cadastrar"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_login_button"/>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">BugCode</string>
+
+
+    <!-- String Login -->
+    <string name="til_username">Nome do usuário</string>
+    <string name="til_password">Senha</string>
+    <string name="btn_login">Login</string>
+    <string name="tv_info">Não tem conta? Cadastre-se</string>
+    <string name="btn_cadastrar">Cadastrar</string>
+    <string name="edtUsername">Nome do usuário</string>
+    <string name="edtEmail">Email</string>
+    <string name="edtConfirmaSenha">Confirmação de senha</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="edt_descricao">Descrição</string>
+    <string name="edt_categoria">Categoria</string>
+    <string name="edt_dataHora">Data / Hora</string>
+    <string name="edt_valor">Valor</string>
+</resources>
