@@ -1,14 +1,16 @@
 package com.example.snackbar
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
 import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import com.example.snackbar.`interface`.ContractMainActivity
-import com.example.snackbar.ui.DetailGastosFragment
-import com.example.snackbar.ui.EntradasFragment
-import com.example.snackbar.ui.GastosFragment
-import com.example.snackbar.ui.HomeFragment
+import com.example.snackbar.ui.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), ContractMainActivity {
@@ -18,6 +20,25 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar_main)
         toolbar_main.setNavigationOnClickListener { finish() }
+
+        toolbar_main.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.account ->{
+                    val intent = Intent(this, ProfileActivity::class.java)
+
+                    val info = Bundle()
+                    info.putString("Nome", "Nome")
+                    info.putInt("Idade", 18)
+                    info.putDouble("Peso", 50.0)
+                    info.putBoolean("Titular", true)
+
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
+
 
         // var usuario: Usuario? = intent.getSerializableExtra("1") as? Usuario
         //Toast.makeText(this, "Olá ${usuario?.username}", Toast.LENGTH_SHORT).show()
@@ -109,6 +130,7 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
         menuInflater.inflate(R.menu.toolbar_main, menu)
         return true
     }
+
 
     override fun callFragDetail() {
         val fragment4 = DetailGastosFragment.newInstance("Detalhes Gasto")

@@ -8,15 +8,28 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.snackbar.R
+import com.example.snackbar.domain.CadastrarGasto
+import kotlinx.android.synthetic.main.fragment_gastos.*
+import kotlinx.android.synthetic.main.fragment_gastos.view.*
 
 class GastosFragment : Fragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gastos, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_gastos, container, false)
+
+        view.btn_cadastrarGasto.setOnClickListener {
+            var gasto: CadastrarGasto = CadastrarGasto(et_descricao.text.toString(), et_categoria.text.toString(), et_dataHora.text.toString(), et_valor.text.toString().toDouble())
+
+            Toast.makeText(context, "Descrição: ${gasto.descricao}", Toast.LENGTH_SHORT).show()
+
+        }
+
+        return view
     }
     companion object{
         fun newInstance() = GastosFragment()
