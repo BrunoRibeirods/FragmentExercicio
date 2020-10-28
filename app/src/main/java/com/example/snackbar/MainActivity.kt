@@ -25,13 +25,12 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
             when(it.itemId){
                 R.id.account ->{
                     val intent = Intent(this, ProfileActivity::class.java)
-
                     val info = Bundle()
-                    info.putString("Nome", "Nome")
-                    info.putInt("Idade", 18)
-                    info.putDouble("Peso", 50.0)
-                    info.putBoolean("Titular", true)
-
+                        info.putString("Nome", "Bruno")
+                        info.putInt("Idade", 18)
+                        info.putDouble("Peso", 50.0)
+                        info.putBoolean("Titular", true)
+                    intent.putExtra("bundle", info)
                     startActivity(intent)
                     true
                 }
@@ -45,11 +44,7 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
 
 
         val fragment = HomeFragment.newInstance()
-        btn_home.setTextColor(getColor(R.color.colordetail))
-        linha_home.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.colordetail)))
-        home_color.setImageTintList(ColorStateList.valueOf(resources.getColor(R.color.colordetail)))
-
-
+        homeColor(R.color.colordetail)
         supportFragmentManager.beginTransaction().apply {
             add(R.id.flFragment, fragment)
             commit()
@@ -57,17 +52,9 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
 
         btn_home.setOnClickListener {
 
-            btn_home.setTextColor(getColor(R.color.colordetail))
-            linha_home.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.colordetail)))
-            home_color.setImageTintList(ColorStateList.valueOf(resources.getColor(R.color.colordetail)))
-
-            btn_entradas.setTextColor(getColor(R.color.colorWhite))
-            linha_entradas.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
-            entradas_color.setImageTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
-
-            btn_gastos.setTextColor(getColor(R.color.colorWhite))
-            linha_gastos.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
-            money_color.setImageTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
+            homeColor(R.color.colordetail)
+            entradasColor(R.color.colorWhite)
+            gastosColor(R.color.colorWhite)
 
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.flFragment, fragment)
@@ -80,17 +67,9 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
 
         btn_gastos.setOnClickListener {
 
-            btn_gastos.setTextColor(getColor(R.color.colordetail))
-            linha_gastos.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.colordetail)))
-            money_color.setImageTintList(ColorStateList.valueOf(resources.getColor(R.color.colordetail)))
-
-            btn_home.setTextColor(getColor(R.color.colorWhite))
-            linha_home.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
-            home_color.setImageTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
-
-            btn_entradas.setTextColor(getColor(R.color.colorWhite))
-            linha_entradas.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
-            entradas_color.setImageTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
+            homeColor(R.color.colorWhite)
+            entradasColor(R.color.colorWhite)
+            gastosColor(R.color.colordetail)
 
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.flFragment, fragment2)
@@ -103,17 +82,9 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
 
         btn_entradas.setOnClickListener {
 
-            btn_entradas.setTextColor(getColor(R.color.colordetail))
-            linha_entradas.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.colordetail)))
-            entradas_color.setImageTintList(ColorStateList.valueOf(resources.getColor(R.color.colordetail)))
-
-            btn_home.setTextColor(getColor(R.color.colorWhite))
-            linha_home.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
-            home_color.setImageTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
-
-            btn_gastos.setTextColor(getColor(R.color.colorWhite))
-            linha_gastos.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
-            money_color.setImageTintList(ColorStateList.valueOf(resources.getColor(R.color.colorWhite)))
+            homeColor(R.color.colorWhite)
+            entradasColor(R.color.colordetail)
+            gastosColor(R.color.colorWhite)
 
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.flFragment, fragment3)
@@ -122,6 +93,26 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
             }
         }
 
+    }
+
+
+
+    fun homeColor(int: Int){
+        btn_home.setTextColor(getColor(int))
+        linha_home.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(int)))
+        home_color.setImageTintList(ColorStateList.valueOf(resources.getColor(int)))
+    }
+
+    fun entradasColor(int: Int){
+        btn_entradas.setTextColor(getColor(int))
+        linha_entradas.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(int)))
+        entradas_color.setImageTintList(ColorStateList.valueOf(resources.getColor(int)))
+    }
+
+    fun gastosColor(int: Int){
+        btn_gastos.setTextColor(getColor(int))
+        linha_gastos.setBackgroundTintList(ColorStateList.valueOf(resources.getColor(int)))
+        money_color.setImageTintList(ColorStateList.valueOf(resources.getColor(int)))
     }
 
 

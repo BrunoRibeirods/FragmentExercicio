@@ -24,21 +24,33 @@
        <include
            android:id="@+id/include5"
            layout="@layout/login_top"
-           app:layout_constraintBottom_toTopOf="@+id/include4"
+           app:layout_constraintBottom_toTopOf="@+id/include6"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toTopOf="parent" />
 
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/logo_mywallet"
+           app:layout_constraintBottom_toBottomOf="@+id/include5"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="0.497"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="@+id/include5"
+           app:layout_constraintVertical_bias="0.17" />
+
        <include
+           android:id="@+id/include6"
            layout="@layout/profile_body"
-           android:layout_width="410dp"
-           android:layout_height="155dp"
+           android:layout_width="match_parent"
+           android:layout_height="450dp"
            app:layout_constraintBottom_toBottomOf="parent"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintHorizontal_bias="0.0"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toTopOf="parent"
-           app:layout_constraintVertical_bias="0.25" />
+           app:layout_constraintVertical_bias="0.672" />
 
 
    </androidx.constraintlayout.widget.ConstraintLayout>
